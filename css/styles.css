@@ -35,7 +35,7 @@ body {
 
 .navbar-brand {
     font-size: 1.3rem;
-    font-weight: 70;
+    font-weight: 700;
     color: var(--brand-white) !important;
     letter-spacing: 0.5px;
 }
@@ -187,41 +187,6 @@ body {
 
 .product-name {
     font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--black);
-    margin: 0;
-}
-
-/* ==================== CATEGORY GRID ==================== */
-.categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.2rem;
-}
-
-.category-card {
-    background: var(--brand-white);
-    border-radius: 8px;
-    padding: 2rem 1rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.category-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-}
-
-.category-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.8rem;
-    color: var(--brand-blue);
-}
-
-.category-name {
-    font-size: 1rem;
     font-weight: 600;
     color: var(--black);
     margin: 0;
@@ -393,10 +358,6 @@ body {
     
     .masonry-grid {
         column-count: 2;
-    }
-    
-    .categories-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     }
     
     .nav-link {

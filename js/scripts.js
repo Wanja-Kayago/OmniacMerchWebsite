@@ -95,22 +95,7 @@ const products = [
     // { id: X, name: 'Product Name', category: 'category-name', image: 'assets/category/imageX.jpeg', featured: false },
 ];
 
-// ==================== CATEGORIES DATA ====================
-const categories = [
-    { name: 'Hoodies', slug: 'hoodies', icon: '🧥' },
-    { name: 'T-Shirts', slug: 'tshirts', icon: '👕' },
-    { name: 'Backpacks', slug: 'backpacks', icon: '🎒' },
-    { name: 'Bags', slug: 'bags', icon: '👜' },
-    { name: 'Bucket Hats', slug: 'bucket-hats', icon: '🧢' },
-    { name: 'Gifts', slug: 'gifts', icon: '🎁' },
-    { name: 'Socks', slug: 'socks', icon: '🧦' },
-    { name: 'Onesies', slug: 'onesies', icon: '👶' },
-    { name: 'Trousers', slug: 'trousers', icon: '👖' },
-    { name: 'Home', slug: 'home', icon: '🏠' },
-    { name: 'Necklaces', slug: 'necklaces', icon: '📿' },
-    { name: 'Special Bag', slug: 'special-bag', icon: '💼' },
-    { name: 'Office', slug: 'office', icon: '🖊️' },
-];
+
 
 // ==================== NAVIGATION SCROLL EFFECT ====================
 window.addEventListener('scroll', () => {
@@ -148,15 +133,7 @@ function createProductCard(product) {
     `;
 }
 
-// ==================== CREATE CATEGORY CARD ====================
-function createCategoryCard(category) {
-    return `
-        <div class="category-card" data-category="${category.slug}">
-            <div class="category-icon">${category.icon}</div>
-            <p class="category-name">${category.name}</p>
-        </div>
-    `;
-}
+
 
 // ==================== LOAD FEATURED PRODUCTS ====================
 function loadFeaturedProducts() {
@@ -164,31 +141,6 @@ function loadFeaturedProducts() {
     const featuredProducts = products.filter(p => p.featured);
     
     featuredGrid.innerHTML = featuredProducts.map(product => createProductCard(product)).join('');
-}
-
-// ==================== LOAD CATEGORIES ====================
-function loadCategories() {
-    const categoriesGrid = document.getElementById('categoriesGrid');
-    categoriesGrid.innerHTML = categories.map(category => createCategoryCard(category)).join('');
-    
-    // Add click event to category cards
-    document.querySelectorAll('.category-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const category = card.dataset.category;
-            filterProducts(category);
-            
-            // Scroll to shop section
-            document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
-            
-            // Update active filter button
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.category === category) {
-                    btn.classList.add('active');
-                }
-            });
-        });
-    });
 }
 
 // ==================== LOAD ALL PRODUCTS ====================
@@ -214,7 +166,6 @@ function filterProducts(category) {
 document.addEventListener('DOMContentLoaded', () => {
     // Load content
     loadFeaturedProducts();
-    loadCategories();
     loadAllProducts();
     
     // Filter button functionality
