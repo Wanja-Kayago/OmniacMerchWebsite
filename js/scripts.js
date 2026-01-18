@@ -29,6 +29,9 @@ const products = [
     // BAGS
     { id: 9, name: 'Blue Duffel Bag', category: 'bags', image: 'assets/bags/bag6.jpeg', featured: false },
     { id: 10, name: 'Orange Duffel Bag', category: 'bags', image: 'assets/bags/bag7.jpeg', featured: false },
+    { id: 23, name: 'Limited Edition Tote-Bag', category: 'bags', image: 'assets/special-bag/totebag1.jpeg', featured: true },
+    { id: 23, name: 'Limited Edition Tote-Bag', category: 'bags', image: 'assets/special-bag/totebag2.jpeg', featured: false },
+    { id: 23, name: 'Limited Edition Tote-Bag', category: 'bags', image: 'assets/special-bag/totebag3.jpeg', featured: false },
     
     // BUCKET HATS
     { id: 11, name: 'Blue Bucket Hat', category: 'bucket-hats', image: 'assets/bucket-hats/hat1.jpeg', featured: true },
@@ -71,11 +74,7 @@ const products = [
     { id: 22, name: 'Chain Necklace', category: 'necklaces', image: 'assets/necklaces/necklase4.jpeg', featured: false },
     { id: 22, name: 'Chain Necklace', category: 'necklaces', image: 'assets/necklaces/necklase5.jpeg', featured: false },
     
-    // SPECIAL BAG
-    { id: 23, name: 'Limited Edition Tote-Bag', category: 'special-bag', image: 'assets/special-bag/totebag1.jpeg', featured: true },
-    { id: 23, name: 'Limited Edition Tote-Bag', category: 'special-bag', image: 'assets/special-bag/totebag2.jpeg', featured: false },
-    { id: 23, name: 'Limited Edition Tote-Bag', category: 'special-bag', image: 'assets/special-bag/totebag3.jpeg', featured: false },
-
+    
     // OFFICE
     { id: 24, name: 'Binder', category: 'office', image: 'assets/office/binder.jpeg', featured: false },
     { id: 25, name: 'Envelope', category: 'office', image: 'assets/office/envelope3.jpeg', featured: false },
