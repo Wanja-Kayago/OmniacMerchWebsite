@@ -35,6 +35,10 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                 </ul>
+                <!-- ADDED: Cart Button -->
+                <button id="cartBtn" class="cart-btn ms-3" onclick="toggleCart()">
+                    🛒 <span id="cartCount" class="cart-count">0</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -43,7 +47,7 @@
     <section id="hero" class="hero-section">
         <div class="video-container">
             <video autoplay muted loop playsinline id="heroVideo">
-                <source src="assets/llo.mp4" type="video/mp4">
+                <source src="/assets/llo.mp4" type="video/mp4">
             </video>
         </div>
         <div class="hero-overlay">
@@ -147,6 +151,71 @@
             </svg>
         </button>
     </footer>
+
+    <!-- ADDED: Cart Modal (Hidden by default) -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="close-btn" onclick="toggleCart()">&times;</button>
+            </div>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-footer">
+                <button class="btn btn-primary w-100" onclick="openCheckout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADDED: Checkout Modal (Hidden by default) -->
+    <div id="checkoutModal" class="checkout-modal">
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h3>Checkout</h3>
+                <button class="close-btn" onclick="closeCheckout()">&times;</button>
+            </div>
+            <form id="checkoutForm" class="checkout-form">
+                <div class="mb-3">
+                    <label class="form-label">Name *</label>
+                    <input type="text" class="form-control" id="userName" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email *</label>
+                    <input type="email" class="form-control" id="userEmail" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Interest Level *</label>
+                    <select class="form-select" id="interestLevel" required>
+                        <option value="">Select...</option>
+                        <option value="Very Interested">Very Interested</option>
+                        <option value="Somewhat Interested">Somewhat Interested</option>
+                        <option value="Just Browsing">Just Browsing</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Size Preference</label>
+                    <select class="form-select" id="sizePreference">
+                        <option value="">Select...</option>
+                        <option value="S">Small (S)</option>
+                        <option value="M">Medium (M)</option>
+                        <option value="L">Large (L)</option>
+                        <option value="XL">Extra Large (XL)</option>
+                    </select>
+                </div>
+                <div id="checkoutItems" class="checkout-items mb-3"></div>
+                <button type="submit" class="btn btn-primary w-100">Submit Interest</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADDED: Success Modal (Hidden by default) -->
+    <div id="successModal" class="success-modal">
+        <div class="success-content">
+            <div class="success-icon">✓</div>
+            <h3>Thank You!</h3>
+            <p>We'll email you when your selected products are available for purchase.</p>
+            <button class="btn btn-primary" onclick="closeSuccess()">Continue Shopping</button>
+        </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
