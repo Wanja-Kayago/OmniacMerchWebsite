@@ -29,9 +29,10 @@ const products = [
     // BAGS
     { id: 23, name: 'Blue Duffel Bag', category: 'bags', image: 'assets/bags/bag6.jpeg', featured: false },
     { id: 24, name: 'Orange Duffel Bag', category: 'bags', image: 'assets/bags/bag7.jpeg', featured: false },
-    { id: 25, name: 'Limited Edition Tote-Bag', category: 'bags', image: 'assets/special-bag/totebag1.jpeg', featured: true },
-    { id: 26, name: 'Limited Edition Tote-Bag', category: 'bags', image: 'assets/special-bag/totebag2.jpeg', featured: false },
-    { id: 27, name: 'Limited Edition Tote-Bag', category: 'bags', image: 'assets/special-bag/totebag3.jpeg', featured: false },
+    //SPECIAL BAGS
+    { id: 25, name: 'Limited Edition Tote-Bag', category: 'special-bags', image: 'assets/special-bag/totebag1.jpeg', featured: true },
+    { id: 26, name: 'Limited Edition Tote-Bag', category: 'special-bags', image: 'assets/special-bag/totebag2.jpeg', featured: false },
+    { id: 27, name: 'Limited Edition Tote-Bag', category: 'special-bags', image: 'assets/special-bag/totebag3.jpeg', featured: false },
     
     // BUCKET HATS
     { id: 28, name: 'Blue Bucket Hat', category: 'bucket-hats', image: 'assets/bucket-hats/hat1.jpeg', featured: true },
