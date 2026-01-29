@@ -59,7 +59,7 @@ body {
     color: var(--brand-blue) !important;
 }
 
-/* ==================== ADDED: CART BUTTON ==================== */
+/* ==================== CART BUTTON ==================== */
 .cart-btn {
     position: relative;
     background: transparent;
@@ -115,7 +115,7 @@ body {
     width: auto;
     height: auto;
     transform: translate(-50%, -50%);
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .hero-overlay {
@@ -181,7 +181,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    position: relative; /* ADDED for add-to-cart button */
+    position: relative;
 }
 
 .section-black .product-card {
@@ -221,7 +221,22 @@ body {
     margin: 0;
 }
 
-/* ==================== ADDED: ADD TO CART BUTTON ==================== */
+/* ==================== GALLERY BADGE ==================== */
+.gallery-badge {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background: rgba(0, 191, 255, 0.95);
+    color: var(--brand-white);
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ==================== ADD TO CART BUTTON ==================== */
 .add-to-cart-btn {
     position: absolute;
     bottom: 1rem;
@@ -397,9 +412,9 @@ body {
     transform: translateY(-5px);
 }
 
-/* ==================== ADDED: CART MODAL ==================== */
+/* ==================== CART MODAL ==================== */
 .cart-modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -519,9 +534,9 @@ body {
     border-top: 1px solid #e5e7eb;
 }
 
-/* ==================== ADDED: CHECKOUT MODAL ==================== */
+/* ==================== CHECKOUT MODAL ==================== */
 .checkout-modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -586,9 +601,9 @@ body {
     border-bottom: none;
 }
 
-/* ==================== ADDED: SUCCESS MODAL ==================== */
+/* ==================== SUCCESS MODAL ==================== */
 .success-modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -636,7 +651,146 @@ body {
     margin-bottom: 2rem;
 }
 
-/* ==================== ADDED: ANIMATIONS ==================== */
+/* ==================== CAROUSEL MODAL ==================== */
+.carousel-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10002;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-modal.active {
+    display: flex;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: var(--brand-white);
+}
+
+.carousel-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-white);
+    margin: 0;
+}
+
+.carousel-close {
+    background: none;
+    border: none;
+    color: var(--brand-white);
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.carousel-close:hover {
+    color: var(--brand-blue);
+}
+
+.carousel-image-container {
+    position: relative;
+    max-width: 800px;
+    max-height: 70vh;
+    margin: 1rem 0;
+}
+
+.carousel-image {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 191, 255, 0.3);
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 191, 255, 0.9);
+    border: none;
+    color: var(--brand-white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-nav:hover {
+    background: var(--brand-blue);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav.prev {
+    left: -60px;
+}
+
+.carousel-nav.next {
+    right: -60px;
+}
+
+.carousel-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.carousel-counter {
+    color: var(--brand-white);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.carousel-add-to-cart {
+    background: var(--brand-blue);
+    color: var(--brand-white);
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
+}
+
+.carousel-add-to-cart:hover {
+    background: var(--brand-white);
+    color: var(--brand-blue);
+    transform: translateY(-2px);
+}
+
+/* ==================== ANIMATIONS ==================== */
 @keyframes slideInRight {
     from { transform: translateX(100%); }
     to { transform: translateX(0); }
@@ -683,6 +837,18 @@ body {
     .cart-content {
         max-width: 100%;
     }
+    
+    .carousel-nav.prev {
+        left: 10px;
+    }
+    
+    .carousel-nav.next {
+        right: 10px;
+    }
+    
+    .carousel-title {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -697,5 +863,15 @@ body {
     .filter-btn {
         font-size: 0.75rem;
         padding: 0.4rem 1rem;
+    }
+    
+    .carousel-container {
+        max-width: 95%;
+    }
+    
+    .carousel-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
     }
 }

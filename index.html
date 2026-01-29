@@ -35,7 +35,7 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                 </ul>
-                <!-- ADDED: Cart Button -->
+                <!-- Cart Button -->
                 <button id="cartBtn" class="cart-btn ms-3" onclick="toggleCart()">
                     🛒 <span id="cartCount" class="cart-count">0</span>
                 </button>
@@ -47,7 +47,7 @@
     <section id="hero" class="hero-section">
         <div class="video-container">
             <video autoplay muted loop playsinline id="heroVideo">
-                <source src="/assets/hero.mp4" type="video/mp4">
+                <source src="/assets/llo.mp4" type="video/mp4">
             </video>
         </div>
         <div class="hero-overlay">
@@ -89,9 +89,8 @@
                 <button class="filter-btn" data-category="trousers">Trousers</button>
                 <button class="filter-btn" data-category="home">Home</button>
                 <button class="filter-btn" data-category="necklaces">Necklaces</button>
-                <button class="filter-btn" data-category="office">Office</button>
             </div>
-
+            
             <div class="masonry-grid" id="productsGrid">
                 <!-- Products will be loaded here by JavaScript -->
             </div>
@@ -154,7 +153,7 @@
         </button>
     </footer>
 
-    <!-- ADDED: Cart Modal (Hidden by default) -->
+    <!-- Cart Modal -->
     <div id="cartModal" class="cart-modal">
         <div class="cart-content">
             <div class="cart-header">
@@ -168,7 +167,7 @@
         </div>
     </div>
 
-    <!-- ADDED: Checkout Modal (Hidden by default) -->
+    <!-- Checkout Modal -->
     <div id="checkoutModal" class="checkout-modal">
         <div class="checkout-content">
             <div class="checkout-header">
@@ -209,13 +208,32 @@
         </div>
     </div>
 
-    <!-- ADDED: Success Modal (Hidden by default) -->
+    <!-- Success Modal -->
     <div id="successModal" class="success-modal">
         <div class="success-content">
             <div class="success-icon">✓</div>
             <h3>Thank You!</h3>
             <p>We'll email you when your selected products are available for purchase.</p>
             <button class="btn btn-primary" onclick="closeSuccess()">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Carousel Modal (NEW) -->
+    <div id="carouselModal" class="carousel-modal">
+        <div class="carousel-container">
+            <div class="carousel-header">
+                <h3 id="carouselTitle" class="carousel-title"></h3>
+                <button class="carousel-close" onclick="closeCarousel()">&times;</button>
+            </div>
+            <div class="carousel-image-container">
+                <button class="carousel-nav prev" onclick="navigateCarousel(-1)">‹</button>
+                <img id="carouselImage" class="carousel-image" src="" alt="Product Image">
+                <button class="carousel-nav next" onclick="navigateCarousel(1)">›</button>
+            </div>
+            <div class="carousel-footer">
+                <div id="carouselCounter" class="carousel-counter"></div>
+                <button class="carousel-add-to-cart" onclick="addToCartFromCarousel()">Add to Cart</button>
+            </div>
         </div>
     </div>
 

@@ -29,18 +29,59 @@ const products = [
     // BAGS
     { id: 23, name: 'Blue Duffel Bag', category: 'bags', image: 'assets/bags/bag6.jpeg', featured: false },
     { id: 24, name: 'Orange Duffel Bag', category: 'bags', image: 'assets/bags/bag7.jpeg', featured: false },
-    //SPECIAL BAGS
-    { id: 25, name: 'Limited Edition Tote-Bag', category: 'special-bags', image: 'assets/special-bag/totebag1.jpeg', featured: true },
-    { id: 26, name: 'Limited Edition Tote-Bag', category: 'special-bags', image: 'assets/special-bag/totebag2.jpeg', featured: false },
-    { id: 27, name: 'Limited Edition Tote-Bag', category: 'special-bags', image: 'assets/special-bag/totebag3.jpeg', featured: false },
     
-    // BUCKET HATS
-    { id: 28, name: 'Blue Bucket Hat', category: 'bucket-hats', image: 'assets/bucket-hats/hat1.jpeg', featured: true },
-    { id: 29, name: 'Purple Bucket Hat', category: 'bucket-hats', image: 'assets/bucket-hats/hat2.jpeg', featured: false },
-    { id: 30, name: 'Orange Bucket Hat', category: 'bucket-hats', image: 'assets/bucket-hats/hat3.jpeg', featured: false },
+    // SPECIAL BAGS - CAROUSEL ITEM (Multiple images for one product)
+    { 
+        id: 25, 
+        name: 'Tote Bag Collection', 
+        category: 'special-bags', 
+        image: 'assets/special-bag/totebag1.jpeg',
+        images: [
+            'assets/special-bag/totebag1.jpeg',
+            'assets/special-bag/totebag2.jpeg',
+            'assets/special-bag/totebag3.jpeg'
+        ],
+        hasCarousel: true,
+        featured: true 
+    },
+    
+    // BUCKET HATS - CAROUSEL ITEM (Multiple images for one product)
+    { 
+        id: 28, 
+        name: 'Bucket Hat Collection', 
+        category: 'bucket-hats', 
+        image: 'assets/bucket-hats/hat1.jpeg',
+        images: [
+            'assets/bucket-hats/hat1.jpeg',
+            'assets/bucket-hats/hat2.jpeg',
+            'assets/bucket-hats/hat3.jpeg'
+        ],
+        hasCarousel: true,
+        featured: true 
+    },
     
     // GIFTS
-    { id: 31, name: 'Gaming Cards', category: 'gifts', image: 'assets/gifts/cards.jpeg', featured: false },
+    { id: 31, 
+      name: 'Gaming Cards', 
+      category: 'gifts', 
+      image: 'assets/gifts/cards1.png', 
+      images: [
+            'assets/gifts/cards.png',
+            'assets/gifts/cards2.png',
+            'assets/gifts/cards3.png',
+            'assets/gifts/cards4.png',
+            'assets/gifts/cards5.png',
+            'assets/gifts/cards6.png',
+            'assets/gifts/cards7.png',
+            'assets/gifts/cards8.png',
+            'assets/gifts/cards9.png',
+            'assets/gifts/cards10.png',
+
+        ],
+      hasCarousel: true,
+
+      featured: false 
+    },
     { id: 32, name: 'Baby Puppets', category: 'gifts', image: 'assets/gifts/puppet.jpeg', featured: false },
     
     // SOCKS
@@ -58,22 +99,34 @@ const products = [
     { id: 40, name: 'Yellow Pants', category: 'trousers', image: 'assets/trousers/pant7.jpeg', featured: false },
     { id: 41, name: 'Dull-blue SweatPants', category: 'trousers', image: 'assets/trousers/pant8.jpeg', featured: false },
     
-    // HOME
-    { id: 42, name: 'Omniac-themed Mugs and Cups', category: 'home', image: 'assets/home/drinkware.jpeg', featured: false },
-    { id: 43, name: 'Omniac-themed Mugs and Cups', category: 'home', image: 'assets/home/drinkware1.jpeg', featured: false },
-    { id: 44, name: 'Omniac-themed Mugs and Cups', category: 'home', image: 'assets/home/drinkware2.jpeg', featured: false },
-    { id: 45, name: 'Omniac-themed Mugs and Cups', category: 'home', image: 'assets/home/drinkware3.jpeg', featured: false },
-    { id: 46, name: 'Omniac-themed Mugs and Cups', category: 'home', image: 'assets/home/drinkware7.jpeg', featured: false },
-    { id: 47, name: 'Omniac-themed Mugs and Cups', category: 'home', image: 'assets/home/drinkware9.jpeg', featured: false },
-    { id: 48, name: 'Omniac Teapot', category: 'home', image: 'assets/home/teapot1.jpeg', featured: false },
-    { id: 49, name: 'Teapot', category: 'home', image: 'assets/home/teapot4.jpeg', featured: true },
+    // HOME - DRINKWARE (RENAMED to avoid duplicates)
+    { id: 42, name: 'Omniac Logo Mug Set', category: 'home', image: 'assets/home/drinkware.jpeg', featured: false },
+    { id: 43, name: 'Omniac Purple Drinkware', category: 'home', image: 'assets/home/drinkware1.jpeg', featured: false },
+    { id: 44, name: 'Omniac Drink Mugs', category: 'home', image: 'assets/home/drinkware2.jpeg', featured: false },
+    { id: 45, name: 'Omniac Glass Set', category: 'home', image: 'assets/home/drinkware3.jpeg', featured: false },
+    { id: 46, name: 'Omniac Travel Mug', category: 'home', image: 'assets/home/drinkware7.jpeg', featured: false },
+    { id: 47, name: 'Omniac Coffee Cup Collection', category: 'home', image: 'assets/home/drinkware9.jpeg', featured: false },
+    
+    // TEAPOTS - CAROUSEL ITEM (Multiple images for one product)
+    { 
+        id: 48, 
+        name: 'Omniac Teapot Collection', 
+        category: 'home', 
+        image: 'assets/home/teapot1.jpeg',
+        images: [
+            'assets/home/teapot1.jpeg',
+            'assets/home/teapot4.jpeg'
+        ],
+        hasCarousel: true,
+        featured: true 
+    },
    
-    // NECKLACES
-    { id: 50, name: 'Chain Necklace', category: 'necklaces', image: 'assets/necklaces/necklace1.jpeg', featured: true },
-    { id: 51, name: 'Chain Necklace', category: 'necklaces', image: 'assets/necklaces/necklace2.jpeg', featured: false },
-    { id: 52, name: 'Chain Necklace', category: 'necklaces', image: 'assets/necklaces/necklase3.jpeg', featured: false },
-    { id: 53, name: 'Chain Necklace', category: 'necklaces', image: 'assets/necklaces/necklase4.jpeg', featured: false },
-    { id: 54, name: 'Chain Necklace', category: 'necklaces', image: 'assets/necklaces/necklase5.jpeg', featured: false },
+    // NECKLACES (RENAMED to avoid duplicates)
+    { id: 50, name: 'Silver Chain Necklace', category: 'necklaces', image: 'assets/necklaces/necklace1.jpeg', featured: true },
+    { id: 51, name: 'Gold Chain Necklace', category: 'necklaces', image: 'assets/necklaces/necklace2.jpeg', featured: false },
+    { id: 52, name: 'Rose Gold Chain Necklace', category: 'necklaces', image: 'assets/necklaces/necklase3.jpeg', featured: false },
+    { id: 53, name: 'Platinum Chain Necklace', category: 'necklaces', image: 'assets/necklaces/necklase4.jpeg', featured: false },
+    { id: 54, name: 'Bronze Chain Necklace', category: 'necklaces', image: 'assets/necklaces/necklase5.jpeg', featured: false },
     
     // OFFICE
     { id: 55, name: 'Binder', category: 'office', image: 'assets/office/binder.jpeg', featured: false },
@@ -91,7 +144,7 @@ const products = [
     { id: 67, name: 'Trasher', category: 'office', image: 'assets/office/papertrasher.jpeg', featured: false }
 ];
 
-// ==================== CART MANAGEMENT (ADDED) ====================
+// ==================== CART MANAGEMENT ====================
 let cart = [];
 
 // Load cart from localStorage
@@ -215,7 +268,62 @@ function showNotification(message) {
     }, 2000);
 }
 
-// Handle checkout form submission (ADDED)
+// ==================== CAROUSEL MODAL FUNCTIONS ====================
+let currentCarouselIndex = 0;
+let currentCarouselImages = [];
+let currentCarouselProduct = null;
+
+// Open carousel modal
+function openCarousel(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product || !product.hasCarousel) return;
+    
+    currentCarouselProduct = product;
+    currentCarouselImages = product.images;
+    currentCarouselIndex = 0;
+    
+    const modal = document.getElementById('carouselModal');
+    modal.classList.add('active');
+    updateCarouselImage();
+}
+
+// Close carousel modal
+function closeCarousel() {
+    document.getElementById('carouselModal').classList.remove('active');
+}
+
+// Navigate carousel
+function navigateCarousel(direction) {
+    currentCarouselIndex += direction;
+    
+    if (currentCarouselIndex < 0) {
+        currentCarouselIndex = currentCarouselImages.length - 1;
+    } else if (currentCarouselIndex >= currentCarouselImages.length) {
+        currentCarouselIndex = 0;
+    }
+    
+    updateCarouselImage();
+}
+
+// Update carousel image
+function updateCarouselImage() {
+    const imgElement = document.getElementById('carouselImage');
+    const counterElement = document.getElementById('carouselCounter');
+    const titleElement = document.getElementById('carouselTitle');
+    
+    imgElement.src = currentCarouselImages[currentCarouselIndex];
+    counterElement.textContent = `${currentCarouselIndex + 1} / ${currentCarouselImages.length}`;
+    titleElement.textContent = currentCarouselProduct.name;
+}
+
+// Add to cart from carousel
+function addToCartFromCarousel() {
+    if (currentCarouselProduct) {
+        addToCart(currentCarouselProduct.id);
+    }
+}
+
+// Handle checkout form submission
 document.addEventListener('DOMContentLoaded', function() {
     const checkoutForm = document.getElementById('checkoutForm');
     if (checkoutForm) {
@@ -260,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close modals when clicking outside (ADDED)
+    // Close modals when clicking outside
     document.getElementById('cartModal').addEventListener('click', function(e) {
         if (e.target === this) {
             this.classList.remove('active');
@@ -272,9 +380,13 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.remove('active');
         }
     });
+    
+    document.getElementById('carouselModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeCarousel();
+        }
+    });
 });
-
-// ==================== YOUR ORIGINAL CODE BELOW ====================
 
 // ==================== NAVIGATION SCROLL EFFECT ====================
 window.addEventListener('scroll', () => {
@@ -300,15 +412,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ==================== CREATE PRODUCT CARD (MODIFIED - Added cart button) ====================
+// ==================== CREATE PRODUCT CARD ====================
 function createProductCard(product) {
+    // If product has carousel, add view gallery badge
+    const galleryBadge = product.hasCarousel ? 
+        '<span class="gallery-badge">📸 View Gallery</span>' : '';
+    
+    // Different onclick behavior for carousel products
+    const cardClick = product.hasCarousel ? 
+        `onclick="openCarousel(${product.id})"` : '';
+    
+    const addToCartBtn = product.hasCarousel ? 
+        `<button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(${product.id})">+</button>` :
+        `<button class="add-to-cart-btn" onclick="addToCart(${product.id})">+</button>`;
+    
     return `
-        <div class="product-card" data-category="${product.category}">
+        <div class="product-card" data-category="${product.category}" ${cardClick}>
+            ${galleryBadge}
             <img src="${product.image}" alt="${product.name}" loading="lazy">
             <div class="product-info">
                 <p class="product-name">${product.name}</p>
             </div>
-            <button class="add-to-cart-btn" onclick="addToCart(${product.id})">+</button>
+            ${addToCartBtn}
         </div>
     `;
 }
@@ -342,7 +467,7 @@ function filterProducts(category) {
 
 // ==================== FILTER BUTTON CLICK ====================
 document.addEventListener('DOMContentLoaded', () => {
-    // Load cart (ADDED)
+    // Load cart
     loadCart();
     
     // Load content
