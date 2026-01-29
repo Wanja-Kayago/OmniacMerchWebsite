@@ -3,8 +3,6 @@
 .env.local
 .env.production
 
-# Vercel
-.vercel
 
 # Node modules (if you add any)
 node_modules/
